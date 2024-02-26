@@ -11,7 +11,7 @@ export class PokemonService {
 		const { page = 1, limit = 10, name, type } = query;
 		const filters = {};
 		if (name) filters['name'] = new RegExp(name, 'i'); // case-insensitive search
-		if (type) filters['type'] = type;
+		if (type) filters['types'] = type;
 
 		return this.pokemonModel
 			.find(filters)
@@ -29,7 +29,7 @@ export class PokemonService {
 	}
 
 	async findAllTypes(): Promise<string[]> {
-		const pokemons = await this.pokemonModel.find().distinct('type').exec();
+		const pokemons = await this.pokemonModel.find().distinct('types').exec();
 		return pokemons.flat();
 	}
 }

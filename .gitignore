@@ -1,0 +1,33 @@
+# Systen files
+.DS_Store
+Thumbs.db
+.idea
+
+# Dependencies
+/node_modules/
+/yarn-error.log
+/yarn-debug.log*
+/yarn.lock
+
+# Logs
+/logs
+*.log
+yarn-debug.log*
+
+# OS folders
+.DS_Store
+
+# Node build artifacts
+node_modules/
+
+# Lock files
+yarn.lock
+pnpm-lock.yaml
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Temporary folders
+tmp/
+temp/

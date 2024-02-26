@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Pokemon } from './pokemon.interface';
+import { Pokemon } from './interface/pokemon.interface';
 
 @Injectable()
 export class PokemonService {

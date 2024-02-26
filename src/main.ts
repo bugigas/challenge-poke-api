@@ -9,7 +9,14 @@ async function bootstrap() {
       .setTitle('Pokémon API')
       .setDescription('API pro prohlížení a správu katalogu Pokémonů')
       .setVersion('1.0')
+      .addBearerAuth(
+          { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' },
+          'access-token',
+      )
+      .addTag('auth')
       .addTag('pokemons')
+      .addTag('types')
+      .addTag('favorites')
       .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document);

@@ -6,7 +6,6 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 export class FavoritesController {
 	constructor(private readonly favoritesService: FavoritesService) {}
 
-	// Použije guard pro ověření JWT tokenu a identifikaci uživatele
 	@UseGuards(JwtAuthGuard)
 	@Post(':pokemonId')
 	addFavorite(@Req() req, @Param('pokemonId') pokemonId: string) {
